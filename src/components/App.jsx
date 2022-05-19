@@ -23,8 +23,7 @@ export class App extends Component{
       number
     }
     const noUniqueName = this.state.contacts
-      .map(event => event.name.toLowerCase())
-      .includes(name.toLowerCase());
+      .find(contact => contact.name.toLowerCase() === name.toLowerCase())
 
     if (noUniqueName) {
       return alert(`${name} is already in contacts`);
